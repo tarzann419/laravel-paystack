@@ -8,6 +8,9 @@
 <body>
     <h1>start payment</h1>
 
+    <!-- errors are stored in sessions. so we check if theres any error stored in this particular session -->
+
+    @if( session()->has('error'))  {{ session()->get('error') }}@endif
     <form action="{{ route('pay') }}" method="post">
         @csrf
 
