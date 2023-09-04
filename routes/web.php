@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PaymentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('/pay-index', [PaymentController::class, 'PayIndex']);
+Route::post('/pay-index', [PaymentController::class, 'MakePayment'])->name('pay');
